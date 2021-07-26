@@ -7,9 +7,9 @@ const FormUser = () => {
     password: "",
   });
 
-  console.log(user);
-
   const { email, password } = user;
+
+  console.log({ email, password });
 
   const registro = async (e) => {
     e.preventDefault();
@@ -32,22 +32,14 @@ const FormUser = () => {
         className="email"
         placeholder="Escribe tu email"
         name="email"
-        onChange={(e) =>
-          setUser({
-            [e.target.name]: e.target.value,
-          })
-        }
+        onChange={(e) => setUser({ ...user, [e.target.name]: e.target.value })}
       />
       <input
         type="text"
         className="password"
         placeholder="Escribe tu password"
         name="password"
-        onChange={(e) =>
-          setUser({
-            [e.target.name]: e.target.value,
-          })
-        }
+        onChange={(e) => setUser({ ...user, [e.target.name]: e.target.value })}
       />
       <button type="submit">Registrarme</button>
     </form>
