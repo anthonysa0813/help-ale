@@ -79,3 +79,7 @@ input {
   border-radius: 1em;
   border: none;
 }
+
+button[type="submit"].login {
+  background-color: rgba(245, 98, 88, 0.795);
+}
